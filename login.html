@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Admin - Arte iPhone Imports</title>
+  <meta name="description" content="Login administrativo da Arte iPhone Imports" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 30%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 35%, #111111 100%);
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .input-dark {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 0.95rem 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-dark::placeholder {
+      color: rgba(255,255,255,0.42);
+    }
+
+    .input-dark:focus {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.05);
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #000;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md">
+    <div class="glass rounded-[30px] p-6 sm:p-8">
+      <div class="flex items-center gap-4">
+        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/95 p-2 shadow-lg shadow-black/30">
+          <img
+            src="images/logo.png"
+            alt="Logo Arte iPhone Imports"
+            class="max-h-full max-w-full object-contain"
+            onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=&quot;text-xs font-bold text-black text-center leading-tight&quot;>ARTE<br>IPHONE</span>';"
+          />
+        </div>
+
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.28em] text-white/45">Área restrita</p>
+          <h1 class="mt-1 text-xl font-semibold tracking-tight">Login administrativo</h1>
+        </div>
+      </div>
+
+      <p class="mt-5 text-sm leading-6 text-white/60">
+        Acesse o painel para visualizar os cadastros recebidos.
+      </p>
+
+      <form id="login-form" class="mt-6 space-y-4">
+        <div>
+          <label class="mb-2 block text-sm text-white/85" for="email">E-mail</label>
+          <input class="input-dark" type="email" id="email" placeholder="seuemail@dominio.com" />
+        </div>
+
+        <div>
+          <label class="mb-2 block text-sm text-white/85" for="senha">Senha</label>
+          <input class="input-dark" type="password" id="senha" placeholder="Digite sua senha" />
+        </div>
+
+        <div id="login-erro" class="hidden rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-200"></div>
+
+        <button
+          type="submit"
+          id="btn-login"
+          class="btn-primary w-full px-5 py-3.5 text-sm"
+        >
+          Entrar no painel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="assets/login.js"></script>
+</body>
+</html>
