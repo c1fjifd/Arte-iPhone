@@ -217,12 +217,17 @@
 
                   <div>
                     <label class="label-dark" for="cpf">CPF</label>
-                    <input class="input-dark" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" />
+                    <input class="input-dark" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" />
                   </div>
 
                   <div>
                     <label class="label-dark" for="emailCliente">E-mail</label>
                     <input class="input-dark" type="email" id="emailCliente" name="emailCliente" placeholder="cliente@email.com" />
+                  </div>
+
+                  <div>
+                    <label class="label-dark" for="telefoneCliente">Telefone</label>
+                    <input class="input-dark" type="text" id="telefoneCliente" name="telefoneCliente" placeholder="(11) 99999-9999" maxlength="15" />
                   </div>
 
                   <div class="grid grid-cols-1 gap-4 sm:grid-cols-[180px_1fr]">
@@ -271,7 +276,7 @@
                   <div>
                     <h4 class="text-base font-semibold text-white">Dados do Pagador</h4>
                     <p class="mt-1 text-sm text-white/50">
-                      Informe os dados da pessoa responsável pelo pagamento.
+                      Informe apenas os dados do responsável pelo pagamento.
                     </p>
                   </div>
 
@@ -283,11 +288,6 @@
                   <div>
                     <label class="label-dark" for="pagadorEmail">E-mail</label>
                     <input class="input-dark" type="email" id="pagadorEmail" name="pagadorEmail" placeholder="pagador@email.com" />
-                  </div>
-
-                  <div>
-                    <label class="label-dark" for="pagadorTelefone">Telefone</label>
-                    <input class="input-dark" type="text" id="pagadorTelefone" name="pagadorTelefone" placeholder="(11) 99999-9999" maxlength="15" />
                   </div>
                 </div>
 
@@ -396,6 +396,11 @@
                       </div>
 
                       <div>
+                        <p class="text-xs uppercase tracking-[0.18em] text-black/40">Telefone</p>
+                        <p id="preview-telefoneCliente" class="mt-1 text-sm font-medium text-black">—</p>
+                      </div>
+
+                      <div>
                         <p class="text-xs uppercase tracking-[0.18em] text-black/40">CEP</p>
                         <p id="preview-cep" class="mt-1 text-sm font-medium text-black">—</p>
                       </div>
@@ -431,11 +436,6 @@
                       </div>
 
                       <div>
-                        <p class="text-xs uppercase tracking-[0.18em] text-black/40">Telefone</p>
-                        <p id="preview-pagadorTelefone" class="mt-1 text-sm font-medium text-black">—</p>
-                      </div>
-
-                      <div class="sm:col-span-2">
                         <p class="text-xs uppercase tracking-[0.18em] text-black/40">E-mail</p>
                         <p id="preview-pagadorEmail" class="mt-1 text-sm font-medium text-black">—</p>
                       </div>
