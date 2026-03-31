@@ -172,7 +172,7 @@ async function apagarCadastro() {
   }
 
   const confirmar = window.confirm(
-    'Tem certeza que deseja apagar este cadastro da listagem principal?'
+    'Tem certeza que deseja apagar este cadastro? Essa ação não poderá ser desfeita.'
   )
 
   if (!confirmar) return
@@ -191,7 +191,7 @@ async function apagarCadastro() {
   detalhesCard.classList.add('hidden')
   cadastroSelecionado = null
   await carregarCadastros()
-  alert('Cadastro apagado com sucesso da listagem principal.')
+  alert('Cadastro apagado com sucesso.')
 }
 
 btnApagar.addEventListener('click', apagarCadastro)
